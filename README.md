@@ -1,13 +1,13 @@
 # 항공권 예약 프로젝트
 
-이 프로젝트는 Node.js, Express, MySQL, Vanilla JavaScript를 사용해 만든 항공권 예약 웹 애플리케이션입니다.  
+이 프로젝트는 Node.js, Express, MySQL를 사용해 만든 항공권 예약 웹 애플리케이션입니다.  
 사용자는 회원가입과 로그인 후 항공편을 조회하고 예약할 수 있으며, 마이페이지에서 예약 및 취소 내역을 확인할 수 있습니다. 또한 관리자 성격의 계정은 통계 페이지에서 항공사 및 좌석 등급별 예약 건수와 매출 정보를 조회할 수 있습니다.
 
 ## 기술 스택
 
 - Backend: Node.js, Express
 - Database: MySQL, `mysql2`
-- Frontend: HTML, CSS, Vanilla JavaScript
+- Frontend: HTML, CSS, JavaScript
 - API 문서화: Swagger UI, `swagger-jsdoc`
 - 메일 전송: Nodemailer
 - 날짜 처리: Day.js
