@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 24px;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 6px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .login-container .signup-link {
+      margin-top: 16px;
+      display: block;
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .login-container .signup-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="./js/login.js" defer></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>로그인</h2>
+    <form action="/login" method="post">
+      <label for="userid">회원 ID</label>
+      <input type="text" id="userid" name="userid" required>
+
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">로그인</button>
+    </form>
+    <a class="signup-link" href="signup.html">Sign Up</a>
+  </div>
+
+</body>
+</html>

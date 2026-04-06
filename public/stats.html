@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>통계정보</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #e9ecef;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .stats-form {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: flex-end;
+    }
+
+    .stats-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 9px 16px;
+      background: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+  <script src="./js/stats.js" defer></script>
+</head>
+<body>
+
+  <h2>항공사 / 좌석별 매출 통계</h2>
+
+  <form class="search-form" id="flight-search-form">
+    <div>
+      <label for="airline">항공사</label>
+      <select name="airline" id="airline">
+        <option value="">항공사 선택</option>
+        <option value="AirKorea">AirKorea</option>
+        <option value="BlueAir">BlueAir</option>
+        <option value="GlobalFly">GlobalFly</option>
+        <option value="NeoWings">NeoWings</option>
+        <option value="StarCnt">StarCnt</option>
+        <option value="SkyJet">SkyJet</option>
+      </select>
+    </div>
+    
+    
+    <div>
+      <label for="seatClass">좌석등급</label>
+      <select name="seatClass" id="seatClass">
+        <option value="">좌석등급 선택</option>
+        <option value="Economy">이코노미</option>
+        <option value="Business">비즈니스</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">조회</button>
+    </div>
+  </form>
+  
+  
+  <div class="result" id="result-content">
+    <!-- JavaScript로 결과가 여기에 삽입됨 -->
+  </div>
+
+</body>
+</html>

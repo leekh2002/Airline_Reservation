@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>마이페이지</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        padding: 40px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .filter {
+        margin-bottom: 20px;
+      }
+
+      input[type='date'] {
+        padding: 8px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      /* .section {
+        margin-bottom: 30px;
+      } */
+      
+      .section {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 10px;
+        margin-bottom: 30px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+
+      .ticket {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .ticket-header {
+        font-weight: bold;
+      }
+
+      .ticket-detail {
+        margin: 5px 0;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        background: #dc3545;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #b02a37;
+      }
+    </style>
+    <script src="./js/mypage.js" defer></script>
+  </head>
+  <body>
+    <div class="filter">
+      <form id="date-filter-form">
+        기간:
+        <input type="date" name="startDate" required />
+        ~
+        <input type="date" name="endDate" required />
+        <button type="submit">조회</button>
+      </form>
+    </div>
+
+    <h2>예약 내역</h2>
+
+    <div class="section">
+      
+    </div>
+
+    <h2>취소 내역</h2>
+    <div class="section">
+      
+    </div>
+  </body>
+</html>

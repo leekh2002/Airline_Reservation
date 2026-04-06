@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>항공편 조회</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f0f2f5;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .search-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .search-form div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select, button {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      margin-top: 22px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .flight-list {
+      margin-top: 20px;
+    }
+
+    .flight {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .flight-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .flight-detail {
+      margin-bottom: 8px;
+    }
+
+    .flight button {
+      background-color: #28a745;
+      margin-top: 10px;
+    }
+
+    .flight button:hover {
+      background-color: #1e7e34;
+    }
+
+    .top-right-link {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+
+    .top-right-link a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .top-right-link a:hover {
+      text-decoration: underline;
+    }
+
+    .flight-list {
+      max-height: 600px; /* 적절한 높이로 조절 */
+      overflow-y: auto;  /* 세로 스크롤 가능하게 */
+    }
+
+  </style>
+  <script src="./js/flights.js" defer></script>
+</head>
+<body>
+  <div class="top-right-link">
+    <a href="mypage.html">마이페이지</a>
+  </div>
+  <h2>항공편 조회</h2>
+
+  <form class="search-form">
+    <div>
+      <label>출발공항</label>
+      <select name="departure" required>
+        <option value="">공항 선택</option>
+        <option value="ICN">인천국제공항</option>
+        <option value="GMP">김포국제공항</option>
+        <option value="JFK">뉴욕 존 F. 케네디 국제공항</option>
+        <option value="PEK">베이징 수도 국제공항</option>
+        <option value="DXB">두바이 국제공항</option>
+        <option value="HKG">홍콩 국제공항</option>
+        <option value="KUL">쿠알라룸푸르 국제공항</option>
+        <option value="TSA">타이베이 송산공항</option>
+        <option value="HAN">하노이 노이바이 국제공항</option>
+        <option value="BKK">방콕 수완나품 국제공항</option>
+        <option value="PVG">상하이 푸둥 국제공항</option>
+        <option value="DEL">인디라 간디 국제공항</option>
+        <option value="SFO">샌프란시스코 국제공항</option>
+        <option value="TPE">타이완 타오위안 국제공항</option>
+        <option value="LAX">로스앤젤레스 국제공항</option>
+        <option value="MNL">마닐라 니노이 아키노 국제공항</option>
+        <option value="LHR">런던 히드로 국제공항</option>
+        <option value="FRA">프랑크푸르트 국제공항</option>
+        <option value="SVO">모스크바 셰레메티예보 국제공항</option>
+        <option value="CDG">파리 샤를 드 골 국제공항</option>
+        <option value="FCO">로마 피우미치노 공항</option>
+        <option value="AMS">암스테르담 스히폴 공항</option>
+        <option value="NRT">도쿄 나리타 국제공항</option>
+        <option value="SYD">시드니 킹스포드 스미스 국제공항</option>
+        <option value="SIN">싱가포르 창이 국제공항</option>
+        <option value="KIX">오사카 간사이 국제공항</option>
+        <option value="HNL">호놀룰루 국제공항</option>
+      </select>
+    </div>
+    <div>
+      <label>출발날짜</label>
+      <input type="date" required>
+    </div>
+    <div>
+      <label>도착공항</label>
+      <select name="arrival" required>
+        <option value="">공항 선택</option>
+        <option value="PUS">김해국제공항</option>
+        <option value="CJU">제주국제공항</option>
+        <option value="ICN">인천국제공항</option>
+        <option value="GMP">김포국제공항</option>
+        <option value="JFK">뉴욕 존 F. 케네디 국제공항</option>
+        <option value="PEK">베이징 수도 국제공항</option>
+        <option value="DXB">두바이 국제공항</option>
+        <option value="HKG">홍콩 국제공항</option>
+        <option value="KUL">쿠알라룸푸르 국제공항</option>
+        <option value="TSA">타이베이 송산공항</option>
+        <option value="HAN">하노이 노이바이 국제공항</option>
+        <option value="BKK">방콕 수완나품 국제공항</option>
+        <option value="PVG">상하이 푸둥 국제공항</option>
+        <option value="DEL">인디라 간디 국제공항</option>
+        <option value="SFO">샌프란시스코 국제공항</option>
+        <option value="TPE">타이완 타오위안 국제공항</option>
+        <option value="LAX">로스앤젤레스 국제공항</option>
+        <option value="MNL">마닐라 니노이 아키노 국제공항</option>
+        <option value="LHR">런던 히드로 국제공항</option>
+        <option value="FRA">프랑크푸르트 국제공항</option>
+        <option value="SVO">모스크바 셰레메티예보 국제공항</option>
+        <option value="CDG">파리 샤를 드 골 국제공항</option>
+        <option value="FCO">로마 피우미치노 공항</option>
+        <option value="AMS">암스테르담 스히폴 공항</option>
+        <option value="NRT">도쿄 나리타 국제공항</option>
+        <option value="SYD">시드니 킹스포드 스미스 국제공항</option>
+        <option value="SIN">싱가포르 창이 국제공항</option>
+        <option value="KIX">오사카 간사이 국제공항</option>
+        <option value="HNL">호놀룰루 국제공항</option>
+      </select>
+    </div>
+    <div>
+      <label>좌석등급</label>
+      <select name="seatClass">
+        <option>Economy</option>
+        <option>Business</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">조회</button>
+    </div>
+  </form>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <label for="sort-option">정렬기준: </label>
+    <select id="sort-option">
+      <option value="price">요금 순</option>
+      <option value="departure">출발시간 순</option>
+      <option value="arrival">도착시간 순</option>
+    </select>
+  </div>
+  <div class="flight-list">
+    
+  </div>
+
+</body>
+</html>
