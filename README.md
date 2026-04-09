@@ -12,6 +12,9 @@
 - 메일 전송: Nodemailer
 - 날짜 처리: Day.js
 
+## Logical Design
+<img width="1776" height="1054" alt="Image" src="https://github.com/user-attachments/assets/f35fc5da-212a-4a8a-9238-e0ae20e8cfa0" />
+
 ## 주요 기능
 
 - 회원가입
